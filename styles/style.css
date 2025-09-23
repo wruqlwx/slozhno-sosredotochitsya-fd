@@ -34,10 +34,10 @@
   display: inline-block;
   margin-block-start: 7px;
   margin-inline-start: 10px;
-  background-color: #FF0070; 
-  border: 9px 9px 9px 9px #FF0070; 
+  background-color: #FF0070;
+  border: 9px 9px 9px 9px #FF0070;
   border-radius: 100%;
-  box-shadow: 5px 5px 5px 5px #FF0070; 
+  box-shadow: 5px 5px 5px 5px #FF0070;
 }
 
 .decorated-zone::before {
@@ -122,7 +122,7 @@
 
 .header-title {
   font-weight: 700;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   letter-spacing: 0%;
   color: var(--title-color); /* ззаменить на переменную */
@@ -153,11 +153,13 @@
 }
 
 .section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   background-color: var(--bg-color); /* заменить на переменную*/
-  padding-block-start: 39px;
   padding-inline-start: 10px;
   padding-inline-end: 10px;
   padding-block-end: 11px;
+  padding-block-start: 39px;
 }
 
 .section-side-position {
@@ -166,6 +168,7 @@
 
 .section-center-position {
   display: grid;
+  padding-block-end: 8px;
 }
 
 .articles-side-position {
@@ -184,7 +187,13 @@
   display: grid;
 }
 
+.section-articles {
+  grid-column: 1/4;
+  padding-block-end: 2px;
+}
+
 .section-title {
+  grid-column: 1/4;
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
@@ -193,6 +202,7 @@
 }
 
 .section-rectangle {
+  grid-column: 1/4;
   background-color: var(--accent-color); /* заменить на переменную*/
   margin-block-start: 20px;
 }
@@ -206,6 +216,7 @@
 }
 
 .section-paragraph {
+  grid-column: 1/4;
   padding-block-start: 10px;
   font-size: 18px;
   font-weight: 400;
@@ -239,12 +250,13 @@
 .section-mozhno {
   display: grid;
   gap: 10px;
-  padding-block-start: 17px;
+  padding-block-start: 15px;
   padding-block-end: 20px;
 }
 
 .gallery {
   display: grid;
+  grid-column: 1/4;
   grid-template-columns: 1fr;
   gap: 10px;
 }
@@ -255,7 +267,6 @@
 .gallery__item-books,
 .gallery__item-street {
   inline-size: 100%;
-  block-size: 100%;
 }
 
 .image-sunset,
@@ -297,11 +308,22 @@
 
   .header-title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    align-self: center;
+    justify-self: start;
+    padding-inline-start: 0;
+    margin-inline-start: 0;
   }
 
   .header__theme-menu {
     margin-inline-end: 20px;
     padding-block-end: 5px;
+    align-self: end;
+    justify-self: end;
+    margin-block-end: 48px;
+  }
+
+  .section-title {
+    grid-column: 1/2;
   }
 
   .section-side-position {
@@ -314,10 +336,14 @@
   .section-center-position {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: min-content repeat(3, auto);
-    padding-block-end: 20px;
+    padding-block-end: 17px;
+    padding-inline-start: 20px;
+    padding-block-start: 68px;
+    padding-inline-end: 20px;
   }
 
   .articles-side-position {
+    grid-column: 2/3;
     margin-inline-start: 5px;
     margin-block-start: 1px;
   }
@@ -356,13 +382,6 @@
     margin-inline-start: 0;
   }
 
-  .header-title {
-    align-self: center;
-    justify-self: start;
-    padding-inline-start: 0;
-    margin-inline-start: 0;
-  }
-
   .rec-dot {
     margin: 10px 10px 0 0;
   }
@@ -375,12 +394,6 @@
     margin: 0 0 20px 20px;
   }
 
-  .header__theme-menu {
-    align-self: end;
-    justify-self: end;
-    margin-block-end: 48px;
-  }
-
   .section-kak {
     padding-block-end: 42px;
   }
@@ -388,7 +401,6 @@
   .section-mozhno {
     padding-block-start: 17px;
     padding-inline-end: 20px;
-
   }
 
   .gallery {
@@ -435,13 +447,6 @@
     padding-block-start: 20px;
     padding-inline-start: 10px;
   }
-
-  .section-center-position {
-    padding-inline-start: 20px;
-    padding-block-start: 70px;
-    padding-inline-end: 20px;
-  }
-  
 }
 
 @media (width >= 1024px) {

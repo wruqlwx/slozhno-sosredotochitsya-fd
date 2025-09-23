@@ -20,6 +20,19 @@
   --paragraph-text-color: #353430;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --cover-image: url(../images/cover-image-light.png);
+    --accent-color: #FF8DCB;
+    --text-color: #353430;
+    --title-color: #FFC2E6;
+    --bg-color: #FFF1F7;
+    --rectangle-text-color: #353430;
+    --section-title-color: #353430;
+    --paragraph-text-color: #353430;
+  }
+}
+
 .rec-dot {
   display: none;
 }
