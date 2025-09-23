@@ -1,5 +1,494 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--cover-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  inline-size: 110vw;
+  block-size: 100vh;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  max-block-size: 100vh;
+  min-block-size: 668px;
+}
+
+.rec-dot {
+  position: absolute; /*скрыть в светлой теме*/
+  padding-block-start: 10px;
+  padding-inline-end: 38px;
+  justify-self: end;
+  align-self: start;
+}
+
+.rec-dot-text::after {
+  content: ''; /* скрыть в светлой теме*/
+  position: absolute;
+  display: inline-block;
+  margin-block-start: 7px;
+  margin-inline-start: 10px;
+  background-color: #FF0070; 
+  border: 9px 9px 9px 9px #FF0070; 
+  border-radius: 100%;
+  box-shadow: 5px 5px 5px 5px #FF0070; 
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border: 1px solid var(--text-color); /*заменить на переменную*/
+  align-self: start;
+  justify-self: end;
+  margin-block-start: 10px;
+  margin-inline-end: 10px;
+  border-inline-start: none;
+  border-block-end: none;
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border: 1px solid var(--text-color); /*заменить на переменную*/
+  align-self: end;
+  justify-self: start;
+  margin-block-end: 11px;
+  margin-inline-start: 10px;
+  border-block-start: none;
+  border-inline-end: none;
+}
+
+.rec-dot-text {
+  color: #FF0070; /* скрыть в свеилой теме*/
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0%;
+}
+
+.header__theme-menu {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin-block-start: 76px;
+  margin-inline-end: 10px;
+  align-self: start;
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: none;
+  color: var(--text-color); /* заменить на переменную*/
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0%;
+  text-transform: lowercase;
+  padding: 4px 13px 4px 13px;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid rgba(255, 0, 112, 0.4); /* заменить на переменную*/
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  text-decoration: underline 1px solid var(--text-color); /* заменить на переменную*/
+  text-underline-offset: 5px;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  outline: 1px solid var(--text-color); /* заменить на переменную*/
+}
+
+.header-title {
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);;
+  line-height: 83%;
+  letter-spacing: 0%;
+  color: var(--title-color); /* ззаменить на переменную */
+  text-shadow: 4px 4px 0 var(--accent-color);
+  grid-row-start: 2;
+  grid-row-end: 3;
+  align-self: center;
+  justify-self: center;
+  padding-inline-start: 10px;
+}
+
+.title-decor {
+  grid-row-start: 3;
+  grid-row-end: auto;
+  margin-block-start: 39px;
+  margin-inline-start: 10px;
+  margin-inline-end: 10px;
+  margin-block-end: 67px;
+  background-color: var(--accent-color);
+}
+
+.header-description-text {
+  color: var(--rectangle-text-color); /* заменить на переменную*/
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  letter-spacing: 0%;
+}
+
+.section {
+  background-color: var(--bg-color); /* заменить на переменную*/
+  padding-block-start: 39px;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  padding-block-end: 11px;
+}
+
+.section-side-position {
+  display: grid;
+}
+
+.section-center-position {
+  display: grid;
+}
+
+.articles-side-position {
+  display: grid;
+}
+
+.articles-center-position {
+  display: grid;
+}
+
+.section-article {
+  display: grid;
+}
+
+.section-article-addition {
+  display: grid;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  letter-spacing: 0%;
+  color: var(--section-title-color); /* заменить на переменную*/
+}
+
+.section-rectangle {
+  background-color: var(--accent-color); /* заменить на переменную*/
+  margin-block-start: 20px;
+}
+
+.section-rectangle-title {
+  color: var(--rectangle-text-color); /* заменить на переменную*/
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  letter-spacing: 0%;
+}
+
+.section-paragraph {
+  padding-block-start: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  letter-spacing: 0%;
+  color: var(--paragraph-text-color); /* заменить на переменную*/
+}
+
+.paragraph-link {
+  text-decoration: none;
+  text-shadow: 2px 1.5px 0 var(--accent-color); /* заменить на перемнную*/
+}
+
+.paragraph-link:focus {
+  outline: none;
+}
+
+.paragraph-link:focus-visible {
+  outline: 1px solid var(--paragraph-text-color); /* заменить на переменную*/
+}
+
+.paragraph-link:hover {
+  text-decoration: underline 1px solid var(--paragraph-text-color); /* заменить на переменную*/
+  text-underline-offset: 2px;
+}
+
+.slim-text {
+  font-weight: 400;
+}
+
+.section-mozhno {
+  display: grid;
+  gap: 10px;
+  padding-block-start: 17px;
+  padding-block-end: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.gallery__item-sunset,
+.gallery__item-ice-cream,
+.gallery__item-tape,
+.gallery__item-books,
+.gallery__item-street {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.image-sunset,
+.image-ice-cream,
+.image-tape,
+.image-books,
+.image-street {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  background-color: var(--bg-color); /* заменить на переменную*/
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 100vh;
+}
+
+.footer-text {
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  letter-spacing: 0%;
+  color: var(--title-color); /* заменить на переменную*/
+  text-shadow: 4px 4px 0 var(--accent-color);
+  align-self: center;
+  justify-self: center;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+@media (width >= 768px) {
+  .header {
+    block-size: 100vh;
+    inline-size: 100vw;
+  }
+
+  .header-title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__theme-menu {
+    margin-inline-end: 20px;
+    padding-block-end: 5px;
+  }
+
+  .section-side-position {
+    grid-template-columns: 1fr 2fr;
+    gap: 25px;
+    padding-inline-end: 20px;
+    padding-block-end: 10px;
+  }
+
+  .section-center-position {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: min-content repeat(3, auto);
+    padding-block-end: 20px;
+  }
+
+  .articles-side-position {
+    margin-inline-start: 5px;
+    margin-block-start: 1px;
+  }
+
+  .articles-center-position {
+    grid-column: 1/5;
+  }
+
+  .section-article {
+    grid-template-rows: min-content auto;
+  }
+
+  .section-article-addition {
+    grid-template-rows: repeat(2, min-content) auto;
+  }
+
+  .header-description {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-self: start;
+    justify-self: end;
+    margin-block-start: 3px;
+    margin-inline-start: 10px;
+    padding-inline-end: 10px;
+    margin-inline-end: 0px;
+  }
+
+  .header-description-text {
+    grid-column: 1/2;
+    margin-inline-end: 10px;
+  }
+
+  .title-decor {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-inline-start: 0;
+  }
+
+  .header-title {
+    align-self: center;
+    justify-self: start;
+    padding-inline-start: 0;
+    margin-inline-start: 0;
+  }
+
+  .rec-dot {
+    margin: 10px 10px 0 0;
+  }
+
+  .decorated-zone::before {
+    margin: 20px 20px 0 0;
+  }
+
+  .decorated-zone::after {
+    margin: 0 0 20px 20px;
+  }
+
+  .header__theme-menu {
+    align-self: end;
+    justify-self: end;
+    margin-block-end: 48px;
+  }
+
+  .section-kak {
+    padding-block-end: 42px;
+  }
+
+  .section-mozhno {
+    padding-block-start: 17px;
+    padding-inline-end: 20px;
+
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, min-content);
+    row-gap: 15px;
+    column-gap: 20px;
+    grid-auto-flow: dense;
+    padding-block-start: 10px;
+    padding-block-end: 35px;
+    padding-inline-start: 10px;
+  }
+
+  .section-rectangle-gallery {
+    margin-inline-start: 10px;
+  }
+ 
+  .gallery__item-sunset {
+    grid-column: 1/3;
+    grid-row: 1/2;
+  }
+
+  .gallery__item-ice-cream {
+    grid-column: 3/4;
+    grid-row: 1/3;
+  }
+
+  .gallery__item-tape {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+
+  .gallery__item-books {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .gallery__item-street {
+    grid-column: 2/4;
+    grid-row: 3/4;
+  }
+
+  .title-side-position {
+    padding-block-start: 20px;
+    padding-inline-start: 10px;
+  }
+
+  .section-center-position {
+    padding-inline-start: 20px;
+    padding-block-start: 70px;
+    padding-inline-end: 20px;
+  }
+  
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    align-self: start;
+    justify-self: center;
+    margin-block-start: 18px;
+    margin-inline-start: 18px;
+  }
+
+  .header__theme-menu-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .header-description {
+    margin: 0;
+    margin-block-start: 12px;
+    margin-inline-start: 12px;
+  }
+
+  .header-description-text {
+    padding: 0;
+    margin: 0;
+  }
+
+  .section-side-position {
+    gap: 10px;
+  }
+
+  .articles-center-position {
+    grid-column: 1/4;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .section-chto {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .title-center-position {
+    grid-column: 1/2;
+  }
+
+  .footer-text {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
