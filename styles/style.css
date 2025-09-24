@@ -435,6 +435,7 @@
   }
 
   .articles-center-position {
+    display: grid;
     grid-column: 1/4;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -447,6 +448,10 @@
 
   .title-center-position {
     grid-column: 1/2;
+  }
+
+  .section-mozhno {
+    padding-block-end: 25px;
   }
 
   .footer-text {
