@@ -9,8 +9,6 @@
 }
 
 body {
-  min-inline-size: 375px;
-  min-block-size: 668px;
   max-inline-size: 100vw;
   max-block-size: 100vh;
   margin: 0 auto;

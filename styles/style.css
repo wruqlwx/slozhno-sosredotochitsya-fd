@@ -8,15 +8,14 @@
   background-attachment: fixed;
   background-color: var(--bg-color);
   overflow-x: hidden;
-  overflow-y: scroll;
-  inline-size: 110vw;
+  overflow-y: auto;
   block-size: 100vh;
 }
 
 .header {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  max-block-size: 100vh;
+  block-size: 100vh;
   min-block-size: 668px;
 }
 
@@ -34,10 +33,12 @@
   display: inline-block;
   margin-block-start: 7px;
   margin-inline-start: 10px;
-  background-color: #FF0070;
-  border: 9px 9px 9px 9px #FF0070;
+  block-size: 9px;
+  inline-size: 9px;
+  background-color: rgba(255, 0, 112, 1);
+  border: rgba(255, 0, 112, 1);
   border-radius: 100%;
-  box-shadow: 5px 5px 5px 5px #FF0070;
+  box-shadow: 0 0 2px 2px rgba(255, 0, 112, 0.8);
 }
 
 .decorated-zone::before {
@@ -73,7 +74,6 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
-  letter-spacing: 0%;
 }
 
 .header__theme-menu {
@@ -97,13 +97,13 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 18px;
-  letter-spacing: 0%;
   text-transform: lowercase;
   padding: 4px 13px 4px 13px;
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid rgba(255, 0, 112, 0.4); /* заменить на переменную*/
+  cursor: pointer;
+  outline: 1px solid var(--text-color-opacity); /* заменить на переменную*/
 }
 
 .header__theme-menu-button:focus {
@@ -124,7 +124,6 @@
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
-  letter-spacing: 0%;
   color: var(--title-color); /* ззаменить на переменную */
   text-shadow: 4px 4px 0 var(--accent-color);
   grid-row-start: 2;
@@ -149,7 +148,6 @@
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
-  letter-spacing: 0%;
 }
 
 .section {
@@ -161,29 +159,9 @@
   padding-block-start: 39px;
 }
 
-.section-side-position {
-  display: grid;
-}
-
 .section-center-position {
   display: grid;
   padding-block-end: 8px;
-}
-
-.articles-side-position {
-  display: grid;
-}
-
-.articles-center-position {
-  display: grid;
-}
-
-.section-article {
-  display: grid;
-}
-
-.section-article-addition {
-  display: grid;
 }
 
 .section-articles {
@@ -196,7 +174,6 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
-  letter-spacing: 0%;
   color: var(--section-title-color); /* заменить на переменную*/
 }
 
@@ -207,7 +184,6 @@
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
-  letter-spacing: 0%;
   margin-block-start: 20px;
 }
 
@@ -217,13 +193,12 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 23.4px;
-  letter-spacing: 0%;
   color: var(--paragraph-text-color); /* заменить на переменную*/
 }
 
 .paragraph-link {
   text-decoration: none;
-  text-shadow: 2px 1.5px 0 var(--accent-color); /* заменить на перемнную*/
+  text-shadow: 1px 1px 0 var(--accent-color); /* заменить на перемнную*/
 }
 
 .paragraph-link:focus {
@@ -235,8 +210,8 @@
 }
 
 .paragraph-link:hover {
-  text-decoration: underline 1px solid var(--paragraph-text-color); /* заменить на переменную*/
-  text-underline-offset: 2px;
+  border-bottom: 1px solid var(--paragraph-text-color); /* заменить на переменную*/
+  cursor: pointer;
 }
 
 .slim-text {
@@ -275,13 +250,13 @@
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   height: 100vh;
+  min-block-size: 668px;
 }
 
 .footer-text {
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
-  letter-spacing: 0%;
   color: var(--title-color); /* заменить на переменную*/
   text-shadow: 4px 4px 0 var(--accent-color);
   align-self: center;
@@ -291,17 +266,10 @@
 }
 
 @media (width >= 768px) {
-  .header {
-    block-size: 100vh;
-    inline-size: 100vw;
-  }
-
   .header-title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    align-self: center;
     justify-self: start;
     padding-inline-start: 0;
-    margin-inline-start: 0;
   }
 
   .header__theme-menu {
@@ -473,7 +441,6 @@
   }
 
   .section-chto {
-    display: grid;
     grid-template-rows: min-content 1fr;
     grid-template-columns: repeat(3, 1fr);
   }

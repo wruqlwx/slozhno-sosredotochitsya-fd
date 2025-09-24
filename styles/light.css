@@ -18,6 +18,7 @@
   --rectangle-text-color: #353430;
   --section-title-color: #353430;
   --paragraph-text-color: #353430;
+  --text-color-opacity: rgba(50, 49, 45, 0.4);
 }
 
 @media (prefers-color-scheme: light) {
@@ -30,9 +31,13 @@
     --rectangle-text-color: #353430;
     --section-title-color: #353430;
     --paragraph-text-color: #353430;
+    --text-color-opacity: rgba(50, 49, 45, 0.4);
+  }
+  .rec-dot {
+    display: none;
   }
 }
 
-.rec-dot {
+.theme-light .rec-dot {
   display: none;
 }
