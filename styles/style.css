@@ -8,7 +8,6 @@
   background-attachment: fixed;
   background-color: var(--bg-color);
   overflow-x: hidden;
-  overflow-y: auto;
   block-size: 100vh;
 }
 
@@ -38,7 +37,7 @@
   background-color: rgba(255, 0, 112, 1);
   border: rgba(255, 0, 112, 1);
   border-radius: 100%;
-  box-shadow: 0 0 2px 2px rgba(255, 0, 112, 0.8);
+  box-shadow: 0 0 3px 2px rgba(255, 0, 112, 0.8);
 }
 
 .decorated-zone::before {
@@ -160,7 +159,6 @@
 }
 
 .section-center-position {
-  display: grid;
   padding-block-end: 8px;
 }
 
@@ -198,7 +196,7 @@
 
 .paragraph-link {
   text-decoration: none;
-  text-shadow: 1px 1px 0 var(--accent-color); /* заменить на перемнную*/
+  text-shadow: 2px 2px 0 var(--accent-color); /* заменить на перемнную*/
 }
 
 .paragraph-link:focus {
@@ -220,7 +218,6 @@
 
 .section-mozhno {
   grid-column: 1/4;
-  display: grid;
   gap: 10px;
   padding-block-start: 15px;
   padding-block-end: 20px;
